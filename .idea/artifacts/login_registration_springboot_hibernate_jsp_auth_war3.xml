@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="login-registration-springboot-hibernate-jsp-auth:war3">
+    <output-path>$PROJECT_DIR$/out/artifacts/login_registration_springboot_hibernate_jsp_auth_war3</output-path>
+    <root id="archive" name="login-registration-springboot-hibernate-jsp-auth_war.war">
+      <element id="artifact" artifact-name="login-registration-springboot-hibernate-jsp-auth:war exploded" />
+    </root>
+  </artifact>
+</component>

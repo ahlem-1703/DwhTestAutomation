@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: USER
+Build-Jdk: 1.8.0_261
+Implementation-Title: login-registration-springboot-hibernate-jsp-auth M
+ aven Webapp
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: springboot.javaguides
+Main-Class: ${start-class}
+
