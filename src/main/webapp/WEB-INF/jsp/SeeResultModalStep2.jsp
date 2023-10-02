@@ -27,8 +27,8 @@
 
         var form = document.getElementById('formkpi'); // Replace 'yourFormId' with the actual ID of your form
         var formData = new FormData(form);
-        fetch('/LaunchScriptTestResultStep2',{
-            method:'POST',
+        fetch('/LaunchScriptTestResultStep2', {
+            method: 'POST',
             body: formData
         })
             .then(function (response) {
@@ -38,12 +38,12 @@
                     throw new Error('Error: ' + response.statusText);
                 }
             })
-            .then(function(data) {
+            .then(function (data) {
                 // Process the response data
                 var modal = document.getElementById('exampleModalLong2');
                 var modalInstance = new bootstrap.Modal(modal);
                 modalInstance.hide();
-                html = renderHtml(data.columns,data.rows);
+                html = renderHtml(data.columns, data.rows);
                 $("#bodyModalSeeQueryStep2").html(html);
                 console.log(html)
             })

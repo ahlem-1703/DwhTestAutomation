@@ -8,6 +8,7 @@ import com.Springboot.example.service.Database1ServiceImp;
 import com.Springboot.example.service.Database2Service;
 import com.Springboot.example.service.VueDetailSevice;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Controller;
@@ -29,7 +30,12 @@ import java.util.List;
 @Controller
 @EnableScheduling
 public class Database2Controller {
-
+	@Value("${spring.datasource.url}")
+	private String SPRING_URL;
+	@Value("${spring.datasource.username}")
+	private String SPRING_USERNAME;
+	@Value("${spring.datasource.password}")
+	private String SPRING_PASSWORD;
 //	@Autowired
 //	private RslRepository database2repository;
 	@Autowired
@@ -269,7 +275,7 @@ public class Database2Controller {
 			System.out.println("voilaaa");
 			Connection conn = null;
 			Class.forName("org.postgresql.Driver");
-			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root");
+			conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD);
 //			PreparedStatement ps00 = conn.prepareStatement("delete from database2 where id_kpi= " + k.id_kpi + " and date between'"  + dateDeb +"' and '" + dateFin + "'");
 //			int rs0 = ps00.executeUpdate();	
 
@@ -352,7 +358,7 @@ public class Database2Controller {
 			System.out.println("voilaaa");
 			Connection conn = null;
 			Class.forName("org.postgresql.Driver");
-			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root");
+			conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD);
 		
 
 			PreparedStatement ps4 = conn.prepareStatement("select T2.date,sum(T2.nbre) as load2 from\n"

@@ -5,6 +5,7 @@ import com.Springboot.example.repository.*;
 import com.Springboot.example.service.Database1Service;
 import com.Springboot.example.service.Database2Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
@@ -23,7 +24,12 @@ import java.util.stream.Collectors;
 
 @Component
 public class LoadDataHelper {
-
+    @Value("${spring.datasource.url}")
+    private String SPRING_URL;
+    @Value("${spring.datasource.username}")
+    private String SPRING_USERNAME;
+    @Value("${spring.datasource.password}")
+    private String SPRING_PASSWORD;
     @Autowired
     private DbRepository dbrepository;
     @Autowired
@@ -38,10 +44,10 @@ public class LoadDataHelper {
     @Autowired
     Database2Service database2Service;
 
-    public Map<String,List<?>> loadAllData(String[] kpis, String dateDeb,
-                                         String dateFin
+    public Map<String, List<?>> loadAllData(String[] kpis, String dateDeb,
+                                            String dateFin
             , long db1, Long db2) throws Exception {
-        Map<String,List<?>> listMap = new HashMap<>();
+        Map<String, List<?>> listMap = new HashMap<>();
         Database d1 = dbrepository.findDatabaseById(db1);
         Database d2 = dbrepository.findDatabaseById(db2);
         List<Database1> rslt = new ArrayList<>();
@@ -52,7 +58,7 @@ public class LoadDataHelper {
         for (String s : kpis) {
             long kpi = Long.parseLong(s);
             Kpi k = kpirepository.findById(kpi).get();
-            try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root")) {
+            try (Connection conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD)) {
                 // Delete records from 'database1'
                 deleteRecords(conn, "database1", k.getId_kpi(), dateDeb, dateFin);
 
@@ -127,7 +133,7 @@ public class LoadDataHelper {
         });
         database1Service.insertBatchData(rslt);
         database2Service.insertBatchData(rslt1);
-        try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root")) {
+        try (Connection conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD)) {
             Arrays.asList(kpis).parallelStream().forEach(s -> {
                 long kpi = Long.parseLong(s);
                 Kpi k = kpirepository.findById(kpi).get();
@@ -198,8 +204,7 @@ public class LoadDataHelper {
             Kpi k = kpirepository.findById(kpi).get();
             Connection conn = null;
             Class.forName("org.postgresql.Driver");
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4"
-                    , "postgres", "root");
+            conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD);
 
             long startTime = System.currentTimeMillis();
 
@@ -270,9 +275,10 @@ public class LoadDataHelper {
         return listMap;
 
     }
+
     public List<Vue_Globale> loadData(String[] kpis, String dateDeb,
                                       String dateFin
-            , long db1, Long db2){
+            , long db1, Long db2) {
         Database d1 = dbrepository.findDatabaseById(db1);
         Database d2 = dbrepository.findDatabaseById(db2);
         List<Database1> rslt = new CopyOnWriteArrayList<>();
@@ -282,7 +288,7 @@ public class LoadDataHelper {
         for (String s : kpis) {
             long kpi = Long.parseLong(s);
             Kpi k = kpirepository.findById(kpi).get();
-            try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root")) {
+            try (Connection conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD)) {
                 // Delete records from 'database1'
                 deleteRecords(conn, "database1", k.getId_kpi(), dateDeb, dateFin);
 
@@ -413,7 +419,7 @@ public class LoadDataHelper {
         for (String s : kpis) {
             long kpi = Long.parseLong(s);
             Kpi k = kpirepository.findById(kpi).get();
-            try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root")) {
+            try (Connection conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD)) {
                 String deleteFromVueDetaille = "delete from vue_detaille where code_requete = ? and date between ? and ?";
                 try (PreparedStatement ps = conn.prepareStatement(deleteFromVueDetaille)) {
                     ps.setLong(1, k.getId_kpi());
@@ -425,14 +431,14 @@ public class LoadDataHelper {
                     e.printStackTrace();
                 }
             } catch (SQLException e) {
-                    System.out.println("SQL Exception: " + e.getMessage());
-                    e.printStackTrace();
-                }
+                System.out.println("SQL Exception: " + e.getMessage());
+                e.printStackTrace();
             }
+        }
         for (String s : kpis) {
             long kpi = Long.parseLong(s);
             Kpi k = kpirepository.findById(kpi).get();
-            try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root")) {
+            try (Connection conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD)) {
 
 
                 try (
@@ -550,6 +556,7 @@ public class LoadDataHelper {
         }
         return rslt00;
     }
+
     private void deleteRecords(Connection conn, String tableName, long idKpi, String dateDeb, String dateFin) {
         String deleteQuery = "DELETE FROM " + tableName + " WHERE id_kpi = ? AND date BETWEEN ? AND ?";
         try (PreparedStatement ps = conn.prepareStatement(deleteQuery)) {

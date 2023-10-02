@@ -132,7 +132,7 @@
                                             <tbody>
                                             <% try {
                                                 Class.forName("org.postgresql.Driver");
-                                                Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root");
+                                                Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Test4", "postgres", "admin");
                                                 Statement stm = conn.createStatement();
                                                 ResultSet rslt = stm.executeQuery("SELECT * FROM kpi");
                                                 while (rslt.next()) { %>

@@ -1,5 +1,3 @@
-
-
 <div class="modal fade" id="scheduleModal" tabindex="-1"
      role="dialog" aria-labelledby="exampleModalLong2"
      aria-hidden="true">
@@ -53,43 +51,49 @@
                     .close {
                         font-size: 24px;
                     }
+
                     /* Styles pour la case à cocher personnalisée */
 
                 </style>
 
-
-<div class="item form-group">
-                    <label for="scheduleName">Schedule Name:</label>
-                    <input class="form-control" type="text" id="scheduleName" name="scheduleName"placeholder="The name must be unique" />
-                </div>
-                <br>
-
-                <div class="item form-group">
-                    <label for="triggerType">Trigger Type:</label>
-                    <div class="col-md-3 col-sm-3 ">
-                        <select class="browser-default custom-select" id="triggerType" name="triggerType"
-                                onchange="handleTriggerTypeChange()">
-                            <option value="DAILY">Daily</option>
-                            <option value="WEEKLY">Weekly</option>
-                            <option value="MONTHLY">Monthly</option>
-                        </select>
+                <form id="formSchedule">
+                    <div class="item form-group">
+                        <label for="scheduleName">Schedule Name:</label>
+                        <input class="form-control" type="text" id="scheduleName"
+                               name="scheduleName"
+                               placeholder="The name must be unique"/>
                     </div>
-                </div>
-                <br>
-                <%@include file="./dailySchedule.jsp" %>
-                <%@include file="./monthlySchedule.jsp" %>
-                <%@include file="./weeklySchedule.jsp" %>
+                    <span id="result" style="color:red;" hidden>Nom deja existe</span>
+                    <br>
+
+                    <div class="item form-group">
+                        <label for="triggerType">Trigger Type:</label>
+                        <div class="col-md-3 col-sm-3 ">
+                            <select class="browser-default custom-select" id="triggerType" name="triggerType"
+                                    onchange="handleTriggerTypeChange()">
+                                <option value="DAILY">Daily</option>
+                                <option value="WEEKLY">Weekly</option>
+                                <option value="MONTHLY">Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <%@include file="./dailySchedule.jsp" %>
+                    <%@include file="./monthlySchedule.jsp" %>
+                    <%@include file="./weeklySchedule.jsp" %>
 
 
-                <center>
-                    <button type="button" class="btn btn-primary"
-                            data-dismiss="modal"
-                            onClick="scheduleAPI()">
-                        <!-- here was an syntax error. you were calling method by uts name without () sign -->
-                        Plan task
-                    </button>
-                </center>
+                    <center>
+                        <button type="button" class="btn btn-primary" disabled id="btnPlan"
+                                data-dismiss="modal"
+                                onClick="scheduleAPI()">
+                            <!-- here was an syntax error. you were calling method by uts name without () sign -->
+                            Plan task
+                        </button>
+                    </center>
+                </form>
             </div>
+
         </div>
     </div>
 </div>

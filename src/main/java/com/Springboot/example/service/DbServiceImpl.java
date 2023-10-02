@@ -8,6 +8,7 @@ import com.Springboot.example.model.Database;
 import com.Springboot.example.model.Database1;
 import com.Springboot.example.repository.RequeteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,7 +27,12 @@ import java.util.List;
 @Service
 @Transactional
 public class DbServiceImpl implements DbService {
-
+    @Value("${spring.datasource.url}")
+    private String SPRING_URL;
+    @Value("${spring.datasource.username}")
+    private String SPRING_USERNAME;
+    @Value("${spring.datasource.password}")
+    private String SPRING_PASSWORD;
     @PersistenceContext
     private EntityManager em;
 
@@ -139,7 +145,7 @@ public class DbServiceImpl implements DbService {
         Connection con = null;
         try {
             Class.forName("org.postgresql.Driver");
-            con = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root");
+            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Test4", "postgres", "admin");
         } catch (Exception e) {
             System.out.println(e);
         }

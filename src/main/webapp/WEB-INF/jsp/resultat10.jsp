@@ -310,8 +310,8 @@
                       <%
                       try{
                     	  Class.forName("org.postgresql.Driver");
-                         Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4"
-                                  ,"postgres","root");
+                         Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Test4"
+                                  ,"postgres","admin");
                     	  Statement stm = conn.createStatement();
                     	  System.out.print(request.getParameter("db1"));
                     	  ResultSet rslt = stm.executeQuery("select * from kpi k , requete r , requete rr  WHERE k.id_kpi = r.id_kpi and rr.id_kpi =k.id_kpi  and r.id_database ="+request.getParameter("db1")+" and rr.id_database= "+request.getParameter("db2"));

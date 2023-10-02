@@ -8,6 +8,7 @@ import com.Springboot.example.repository.KpiRepository;
 import com.Springboot.example.repository.Rsl_test_sysRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -22,7 +23,12 @@ import java.util.List;
 
 @Service
 public class Database1ServiceImp implements Database1Service {
-	
+	@Value("${spring.datasource.url}")
+	private String SPRING_URL;
+	@Value("${spring.datasource.username}")
+	private String SPRING_USERNAME;
+	@Value("${spring.datasource.password}")
+	private String SPRING_PASSWORD;
 	@PersistenceContext
 	public EntityManager em;
 	@Autowired
@@ -68,7 +74,7 @@ public class Database1ServiceImp implements Database1Service {
 		Connection conn = null;
         Class.forName("org.postgresql.Driver");
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/GreenPlumDHW"
-                ,"postgres","root");
+                ,SPRING_USERNAME,SPRING_PASSWORD);
         
         PreparedStatement ps = conn.prepareStatement("select k.name_kpi as name, count(distinct(a.val_kpi)) as val1,count(distinct(b.val_kpi)) as val2, sum(distinct(a.val_kpi)) as val3 ,sum(distinct(b.val_kpi)) as val4, a.idkpi as Code_requete ,a.date as Date \r\n" + 
         		"from database1 as a LEFT OUTER JOIN database1 as b ON  a.idkpi=b.idkpi INNER JOIN kpi as k on a.idkpi=k.id_kpi \r\n" + 
@@ -149,7 +155,7 @@ public class Database1ServiceImp implements Database1Service {
 		Connection conn = null;
         Class.forName("org.postgresql.Driver");
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/GreenPlumDHW"
-                ,"postgres","root");
+                ,SPRING_USERNAME,SPRING_PASSWORD);
         
         PreparedStatement ps = conn.prepareStatement("select DISTINCT a.idkpi Code_requete ,a.valeur_dim as dim, a.date as Date,a.val_kpi as valeur1" +
         		" , b.val_kpi as valeur2 , k.name_kpi as name from database1 a ,database1 b ,kpi k \r\n" + 
@@ -226,7 +232,7 @@ public class Database1ServiceImp implements Database1Service {
 				"VALUES\n" +
 				"(?,?,?,?,?,?)\n";
 
-		try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root");
+		try (Connection connection = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD);
 			 PreparedStatement ps = connection.prepareStatement(insertQuery)) {
 
 			for (Database1 r : records) {

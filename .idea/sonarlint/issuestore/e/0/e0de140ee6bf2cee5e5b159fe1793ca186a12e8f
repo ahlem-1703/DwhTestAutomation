@@ -1,0 +1,768 @@
+
+`	java:S112X"FDefine and throw a dedicated exception instead of using a generic one.(ùôê‹úÿÿÿÿ
+a	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¸ÔÑŞûÿÿÿÿ
+\	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ñ›˜ò
+a	java:S112Ò"FDefine and throw a dedicated exception instead of using a generic one.(ºµÜ¢şÿÿÿÿ
+a	java:S112š"FDefine and throw a dedicated exception instead of using a generic one.(ºµÜ¢şÿÿÿÿ
+a	java:S112“"FDefine and throw a dedicated exception instead of using a generic one.(ìëñúÿÿÿÿ
+a	java:S112Ö"FDefine and throw a dedicated exception instead of using a generic one.(„«²ÿÿÿÿÿ
+\	java:S112œ"FDefine and throw a dedicated exception instead of using a generic one.(ñ›˜ò
+\	java:S112ß"FDefine and throw a dedicated exception instead of using a generic one.(ñ›˜ò
+\	java:S112ß"FDefine and throw a dedicated exception instead of using a generic one.(ñ›˜ò
+a	java:S112±"FDefine and throw a dedicated exception instead of using a generic one.(„«²ÿÿÿÿÿ
+a	java:S112ñ"FDefine and throw a dedicated exception instead of using a generic one.(„«²ÿÿÿÿÿ
+[	java:S112½"FDefine and throw a dedicated exception instead of using a generic one.(ã…¡l
+\	java:S112ÿ"FDefine and throw a dedicated exception instead of using a generic one.(ñ›˜ò
+a	java:S112Ø"FDefine and throw a dedicated exception instead of using a generic one.(¤‹”şÿÿÿÿ
+a	java:S112Ú"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+t
+java:S2293Y"YReplace the type specification in this constructor call with the diamond operator ("<>").(›ÊØ½şÿÿÿÿ
+u
+java:S2293™"YReplace the type specification in this constructor call with the diamond operator ("<>").(Í’åÁÿÿÿÿÿ
+u
+java:S2293Ô"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ï©ÄÂøÿÿÿÿ
+u
+java:S2293Õ"YReplace the type specification in this constructor call with the diamond operator ("<>").(›ÊØ½şÿÿÿÿ
+o
+java:S2293§"YReplace the type specification in this constructor call with the diamond operator ("<>").(èã‚
+
+u
+java:S2293é"YReplace the type specification in this constructor call with the diamond operator ("<>").(Í’åÁÿÿÿÿÿ
+u
+java:S2293í"YReplace the type specification in this constructor call with the diamond operator ("<>").(Í’åÁÿÿÿÿÿ
+u
+java:S2293¿"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ï©ÄÂøÿÿÿÿ
+u
+java:S2293†"YReplace the type specification in this constructor call with the diamond operator ("<>").(Í’åÁÿÿÿÿÿ
+p
+java:S2293”"YReplace the type specification in this constructor call with the diamond operator ("<>").(“åäÚ
+‡
+java:S1192ä"pDefine a constant instead of duplicating this literal "        and coalesce (a.date, b.date) between '" 4 times.(üŠµ¾
+e
+java:S1192ü"NDefine a constant instead of duplicating this literal "code_requete" 12 times.(‰ìŒà
+j
+java:S1192"SDefine a constant instead of duplicating this literal "nbre_record_not_ok" 9 times.(úÌ÷÷
+a
+java:S1192g"FDefine a constant instead of duplicating this literal "seuil" 4 times.( ­Âøÿÿÿÿ
+e
+java:S1192e"JDefine a constant instead of duplicating this literal "name_kpi" 13 times.(ö²ÉÑûÿÿÿÿ
+n
+java:S1192i"SDefine a constant instead of duplicating this literal "seuil_data_quality" 4 times.(°¤Ü£øÿÿÿÿ
+i
+java:S1192"MDefine a constant instead of duplicating this literal "Code_requete" 6 times.(ÿ»Û€üÿÿÿÿ
+`
+java:S1192]"JDefine a constant instead of duplicating this literal "postgres" 14 times.(¢¬Æà
+o
+java:S1192"SDefine a constant instead of duplicating this literal " as Code_requete ," 8 times.(“şÚÂüÿÿÿÿ
+˜
+java:S1192Õ"€Define a constant instead of duplicating this literal "        , coalesce (a.valeur_dim,b.valeur_dim) as valeur_dim\r
+" 4 times.(¶ËÄğ
+f
+java:S1192Â"JDefine a constant instead of duplicating this literal "database2" 3 times.(£”“£üÿÿÿÿ
+a
+java:S1192Á"JDefine a constant instead of duplicating this literal "database1" 3 times.(ºŒî±
+c
+java:S1192İ"LDefine a constant instead of duplicating this literal "GAP_par_100" 3 times.(œ¦¤š
+
+java:S1192Ù"óDefine a constant instead of duplicating this literal "        , 100*abs (sum (coalesce (a.val_kpi,0) - coalesce (b.val_kpi,0))) / GREATEST  (abs(sum ( coalesce (a.val_kpi,0))), abs (sum ( coalesce (b.val_kpi,0))) ) as gap_par_100\r
+" 4 times.(ëÊ‹Şıÿÿÿÿ
+k
+java:S1192‚"ODefine a constant instead of duplicating this literal "nbre_record_ok" 6 times.(–‘ôÚûÿÿÿÿ
+j
+java:S1192"NDefine a constant instead of duplicating this literal " as val_dim, " 8 times.(·é¹®ıÿÿÿÿ
+{
+java:S1192ß"_Define a constant instead of duplicating this literal "        and a.date = b.date\r
+" 4 times.(ıÓšüøÿÿÿÿ
+h
+java:S1192‘"LDefine a constant instead of duplicating this literal "yyyy-MM-dd" 10 times.(¥ÛÍúÿÿÿÿ
+n
+java:S1192¡"RDefine a constant instead of duplicating this literal "', 'YYYY-MM-DD') " 5 times.(´â·êıÿÿÿÿ
+d
+java:S1192"MDefine a constant instead of duplicating this literal "recordsTotal" 3 times.(ˆ¡¿¸
+`
+java:S1192Ø"IDefine a constant instead of duplicating this literal "Postgres" 5 times.(¿÷ì•
+„
+java:S1192â"mDefine a constant instead of duplicating this literal "        AND coalesce(a.id_kpi,b.id_kpi) IN (" 4 times.(ªãÓÃ
+§
+java:S1192ã"Define a constant instead of duplicating this literal "        and abs (coalesce (a.val_kpi,0) + coalesce (b.val_kpi,0))>0        \r
+" 4 times.(¸ß½Ÿ
+§
+java:S1192à"ŠDefine a constant instead of duplicating this literal "		   full outer join kpi K on K.id_kpi = coalesce (a.id_kpi,b.id_kpi )\r
+" 4 times.(Û·­şÿÿÿÿ
+f
+java:S1192è"JDefine a constant instead of duplicating this literal "resultat3" 4 times.(š£˜ƒøÿÿÿÿ
+]
+java:S1192‘"FDefine a constant instead of duplicating this literal " and " 6 times.(‘Ÿëì
+•
+java:S1192İ"~Define a constant instead of duplicating this literal "        full outer join database2 b on a.id_kpi = b.id_kpi\r
+" 4 times.(Õï«ó
+`
+java:S1192h"JDefine a constant instead of duplicating this literal "seuil_gap" 4 times.(²ÿü¥
+~
+java:S1192\"hDefine a constant instead of duplicating this literal "jdbc:postgresql://localhost:5433/Test4" 14 times.(¥Ë‰ß
+”
+java:S1192×"xDefine a constant instead of duplicating this literal "        , sum ( coalesce (b.val_kpi,0)) as val_kpi_b\r
+" 4 times.(Ã­Ñûÿÿÿÿ
+f
+java:S1192…"JDefine a constant instead of duplicating this literal "val_kpi_a" 3 times.(ÿÜÇæúÿÿÿÿ
+a
+java:S1192†"JDefine a constant instead of duplicating this literal "val_kpi_b" 3 times.(Ô”œ‰
+s
+java:S1192Ü"\Define a constant instead of duplicating this literal "        from database1 a\r
+" 4 times.(é€Ô
+w
+java:S1192“"`Define a constant instead of duplicating this literal "date Deb supÃ©rieur Ã  date Fin" 5 times.(ÅÉ´¹
+_
+java:S1192“"HDefine a constant instead of duplicating this literal "message" 6 times.(ÅÉ´¹
+_
+java:S1192q"IDefine a constant instead of duplicating this literal "resultat" 7 times.(®¡­—
+t
+java:S1192Ş"]Define a constant instead of duplicating this literal "jdbc:postgresql://localhost:" 4 times.(çÒ‡ı
+t
+java:S1192ã"]Define a constant instead of duplicating this literal "jdbc:oracle:thin:@localhost:" 4 times.(Ü¤Ğü
+
+java:S1192‰"jDefine a constant instead of duplicating this literal "Failed to create JDBC dateDeb connection " 6 times.(ÛïæÕ
+•
+java:S1192Ö"yDefine a constant instead of duplicating this literal "        , sum ( coalesce (a.val_kpi,0))  as val_kpi_a\r
+" 4 times.(Çâ•²ıÿÿÿÿ
+r
+java:S1192"VDefine a constant instead of duplicating this literal "  and date  between '" 3 times.(èê»åøÿÿÿÿ
+g
+java:S1192"KDefine a constant instead of duplicating this literal " as date, " 8 times.(“şÚÂüÿÿÿÿ
+n
+java:S1192ë"RDefine a constant instead of duplicating this literal " OFFSET ? LIMIT ?" 3 times.(ºŠ¨ñúÿÿÿÿ
+^
+java:S1192ä"GDefine a constant instead of duplicating this literal "'  \r
+" 4 times.(üŠµ¾
+
+java:S1192Ó"€Define a constant instead of duplicating this literal "        select coalesce (a.id_kpi,b.id_kpi ) as Code_requete\r
+" 4 times.(»´Á±ÿÿÿÿÿ
+£
+java:S1192Ø"‹Define a constant instead of duplicating this literal "        , sum ( coalesce (a.val_kpi,0) - coalesce (b.val_kpi,0)) as gap\r
+" 4 times.(âæĞê
+É
+java:S1192å"¬Define a constant instead of duplicating this literal "    AND CASE WHEN (ABS(coalesce(a.val_kpi, 0) - coalesce(b.val_kpi, 0))) > K.seuil THEN 1 ELSE 0 END = 1\r
+" 4 times.(á£½§ıÿÿÿÿ
+c
+java:S1192‘"LDefine a constant instead of duplicating this literal "' group by " 6 times.(‘Ÿëì
+g
+java:S1192İ"PDefine a constant instead of duplicating this literal "nbreRecordNotOk" 5 times.(œ¦¤š
+j
+java:S1192"NDefine a constant instead of duplicating this literal "no connexions" 4 times.(ÙÌ… üÿÿÿÿ
+m
+java:S1192á"VDefine a constant instead of duplicating this literal "        WHERE 1=1 \r
+" 4 times.(¤ÖÜ…
+f
+java:S1192"PDefine a constant instead of duplicating this literal "recordsFiltered" 3 times.(™Ó…g
+b
+java:S1192â"KDefine a constant instead of duplicating this literal " ORDER BY " 3 times.(Ä£à
+h
+java:S1192„"LDefine a constant instead of duplicating this literal "acceptation" 3 times.(¥ÕÜÅûÿÿÿÿ
+‡
+java:S1192Ş"kDefine a constant instead of duplicating this literal "        and a.valeur_dim = b.valeur_dim\r
+" 4 times.(ñ’ïÿÿÿÿÿ
+r
+java:S1192["WDefine a constant instead of duplicating this literal "org.postgresql.Driver" 17 times.(õ†¨Äùÿÿÿÿ
+a
+java:S1192ö"JDefine a constant instead of duplicating this literal "SqlServer" 4 times.(î‰¾³
+­
+java:S1192Û"Define a constant instead of duplicating this literal "        ,  K.name_kpi as name, a.system as Database1 , b.system as Database2\r
+" 4 times.(£˜º–øÿÿÿÿ
+d
+java:S1192"HDefine a constant instead of duplicating this literal "Select " 8 times.(“şÚÂüÿÿÿÿ
+†
+java:S1192Ô"oDefine a constant instead of duplicating this literal "        , coalesce (a.date, b.date) as Date\r
+" 4 times.(‘Ş¸Á
+e
+java:S1192À"IDefine a constant instead of duplicating this literal "val_dim" 12 times.(òÓê°ûÿÿÿÿ
+b
+java:S1192‘"KDefine a constant instead of duplicating this literal " between '" 6 times.(‘Ÿëì
+i
+java:S1192ò"SDefine a constant instead of duplicating this literal " and date between'" 4 times.(›ãã
+a
+java:S1192ş"JDefine a constant instead of duplicating this literal "val_kpi2" 10 times.(¼¾÷¡
+÷
+java:S1192æ"ßDefine a constant instead of duplicating this literal "        GROUP BY  coalesce ( a.id_kpi, b.id_kpi ),  K.name_kpi ,a.system,b.system,coalesce (a.date, b.date),coalesce (a.valeur_dim,b.valeur_dim) ,  K.seuil\r
+" 4 times.(ˆã¶Ï
+a
+java:S1192ı"JDefine a constant instead of duplicating this literal "val_kpi1" 10 times.(øæÎ
+æ
+java:S1192Ú"ÉDefine a constant instead of duplicating this literal "        , case when (abs (sum ( coalesce (a.val_kpi,0) - coalesce (b.val_kpi,0))) >  K.seuil) then 1 else 0 end as nbre_record_not_ok\r
+" 4 times.(Ï·åÕÿÿÿÿÿ
+_
+java:S1192ò"IDefine a constant instead of duplicating this literal "' and '" 17 times.(›ãã
+h
+java:S1192€"LDefine a constant instead of duplicating this literal "gap_par_100" 9 times.(™àÿÿÿÿÿ
+a
+java:S1192í"JDefine a constant instead of duplicating this literal " ||'|'|| " 4 times.(›†¶Å
+g
+java:S1192ˆ"KDefine a constant instead of duplicating this literal "valeur_dim" 3 times.(şàÌ”ıÿÿÿÿ
+k	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ÊØ½şÿÿÿÿ
+l	java:S117ä"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾é†åøÿÿÿÿ
+l	java:S117å"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´¡Â±şÿÿÿÿ
+l	java:S117æ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›Óıªøÿÿÿÿ
+l	java:S117Õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ÊØ½şÿÿÿÿ
+g	java:S117œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶æ¿
+l	java:S117ñ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾é†åøÿÿÿÿ
+l	java:S117ò"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´¡Â±şÿÿÿÿ
+l	java:S117ó"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›Óıªøÿÿÿÿ
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾é†åøÿÿÿÿ
+l	java:S117‚"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´¡Â±şÿÿÿÿ
+l	java:S117³"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾é†åøÿÿÿÿ
+l	java:S117´"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´¡Â±şÿÿÿÿ
+l	java:S117µ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›Óıªøÿÿÿÿ
+l	java:S117„"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾é†åøÿÿÿÿ
+l	java:S117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´¡Â±şÿÿÿÿ
+l	java:S117­"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾é†åøÿÿÿÿ
+l	java:S117®"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´¡Â±şÿÿÿÿ
+g	java:S117¤"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ƒñœ
+g	java:S117§"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆºå¾
+g	java:S117¨"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õğÂê
+8
+java:S1643ë"Use a StringBuilder instead.(ÄƒáÁüÿÿÿÿ
+3
+java:S1643í"Use a StringBuilder instead.(›†¶Å
+8
+java:S1643ø"Use a StringBuilder instead.(ÄƒáÁüÿÿÿÿ
+3
+java:S1643ú"Use a StringBuilder instead.(›†¶Å
+8
+java:S1643ˆ"Use a StringBuilder instead.(ÄƒáÁüÿÿÿÿ
+8
+java:S1643Š"Use a StringBuilder instead.(É‘ÛÖûÿÿÿÿ
+8
+java:S1643º"Use a StringBuilder instead.(ÄƒáÁüÿÿÿÿ
+3
+java:S1643¼"Use a StringBuilder instead.(›†¶Å
+8
+java:S1643Œ"Use a StringBuilder instead.(ÄƒáÁüÿÿÿÿ
+8
+java:S1643"Use a StringBuilder instead.(É‘ÛÖûÿÿÿÿ
+8
+java:S1643µ"Use a StringBuilder instead.(ÄƒáÁüÿÿÿÿ
+3
+java:S1643·"Use a StringBuilder instead.(›†¶Å
+‚
+java:S1488è"kImmediately return this expression instead of assigning it to the temporary variable "triggerInformations".(íû«Ê
+b	java:S101."MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Òşî
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Î¬“ú
+j
+java:S2095`"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(èßæÅşÿÿÿÿ
+k
+java:S2095«"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Öı‘õÿÿÿÿÿ
+^
+java:S2095\"HUse try-with-resources or close this "Connection" in a "finally" clause.(Ú‡ÈÖ
+k
+java:S2095Ñ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ñ¯ÙÆÿÿÿÿÿ
+k
+java:S2095ƒ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(€©Şùşÿÿÿÿ
+f
+java:S2095§"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ş—ÒÅ
+f
+java:S2095«"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ß•İÖ
+k
+java:S2095“"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(îŸ€Ğüÿÿÿÿ
+d
+java:S2095‘"HUse try-with-resources or close this "Connection" in a "finally" clause.(ğéè øÿÿÿÿ
+_
+java:S2095á"HUse try-with-resources or close this "Connection" in a "finally" clause.(¥Ë‰ß
+k
+java:S2095®"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àäíÆşÿÿÿÿ
+k
+java:S2095¼"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Úç¬Ëûÿÿÿÿ
+k
+java:S2095É"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àäíÆşÿÿÿÿ
+k
+java:S2095ÿ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(„å°Ãıÿÿÿÿ
+k
+java:S2095Â"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÊÓãßÿÿÿÿÿ
+k
+java:S2095“"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(öÚ¥ùÿÿÿÿ
+d
+java:S2095Ê"HUse try-with-resources or close this "Connection" in a "finally" clause.(ğéè øÿÿÿÿ
+k
+java:S2095»"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àŠ¢ƒúÿÿÿÿ
+k
+java:S2095â"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àäíÆşÿÿÿÿ
+f
+java:S2095Í"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¶¾•Ñ
+_
+java:S2095¬"HUse try-with-resources or close this "Connection" in a "finally" clause.(·Ïâò
+_
+java:S2095÷"HUse try-with-resources or close this "Connection" in a "finally" clause.(¥Ë‰ß
+f
+java:S2095ù"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(´è§ì
+k
+java:S2095ï"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(àäíÆşÿÿÿÿ
+_
+java:S2095ê"HUse try-with-resources or close this "Connection" in a "finally" clause.(·Ïâò
+d
+java:S2095¨"HUse try-with-resources or close this "Connection" in a "finally" clause.(¤®äöşÿÿÿÿ
+k
+java:S2095­"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(·äÿÿÿÿÿ
+_
+java:S2095Ü"HUse try-with-resources or close this "Connection" in a "finally" clause.(¥Ë‰ß
+k
+java:S2095…"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉöÀàûÿÿÿÿ
+f
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÛĞöğ
+d
+java:S2095¨"HUse try-with-resources or close this "Connection" in a "finally" clause.(ğéè øÿÿÿÿ
+k
+java:S2095’"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(úò™¤üÿÿÿÿ
+d
+java:S2095õ"HUse try-with-resources or close this "Connection" in a "finally" clause.(ğéè øÿÿÿÿ
+k
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(èê»åøÿÿÿÿ
+k
+java:S2095¯"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÑóµÈùÿÿÿÿ
+d
+java:S2095¿"HUse try-with-resources or close this "Connection" in a "finally" clause.(ğéè øÿÿÿÿ
+k
+java:S2095å"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(èßæÅşÿÿÿÿ
+e
+java:S2095ò"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(›ãã
+_
+java:S2095Ã"HUse try-with-resources or close this "Connection" in a "finally" clause.(¥Ë‰ß
+k
+java:S2095é"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Öı‘õÿÿÿÿÿ
+d
+java:S2095ş"HUse try-with-resources or close this "Connection" in a "finally" clause.(£°Ùşÿÿÿÿ
+_
+java:S2095İ"HUse try-with-resources or close this "Connection" in a "finally" clause.(·Ïâò
+_
+java:S2095™"HUse try-with-resources or close this "Connection" in a "finally" clause.(¥Ë‰ß
+_
+java:S2095¨"HUse try-with-resources or close this "Connection" in a "finally" clause.(¥Ë‰ß
+e
+java:S2095‡"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Û¡â:
+e
+java:S2095Æ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ˆù·j
+_
+java:S2095ú"HUse try-with-resources or close this "Connection" in a "finally" clause.(Ü´Ê
+f
+java:S2095÷"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ÿ¨©¼
+k
+java:S2095£"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(„ õµıÿÿÿÿ
+k
+java:S2095”"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(™‡±“úÿÿÿÿ
+k
+java:S2095¥"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÀİšÎøÿÿÿÿ
+S
+java:S3655œ"7Call "Optional#isPresent()" before accessing the value.(—ÑÚÀşÿÿÿÿ
+S
+java:S3655‚"7Call "Optional#isPresent()" before accessing the value.(½ÒÆıÿÿÿÿ
+S
+java:S3655°"7Call "Optional#isPresent()" before accessing the value.(½ÒÆıÿÿÿÿ
+S
+java:S3655ì"7Call "Optional#isPresent()" before accessing the value.(—ÑÚÀşÿÿÿÿ
+S
+java:S3655Œ"7Call "Optional#isPresent()" before accessing the value.(—ÑÚÀşÿÿÿÿ
+S
+java:S3655‘"7Call "Optional#isPresent()" before accessing the value.(½ÒÆıÿÿÿÿ
+S
+java:S3655º"7Call "Optional#isPresent()" before accessing the value.(—ÑÚÀşÿÿÿÿ
+N
+java:S3655è"7Call "Optional#isPresent()" before accessing the value.(íû«Ê
+S
+java:S3655ª"7Call "Optional#isPresent()" before accessing the value.(—ÑÚÀşÿÿÿÿ
+S
+java:S3655î"7Call "Optional#isPresent()" before accessing the value.(½ÒÆıÿÿÿÿ
+S
+java:S3655Å"7Call "Optional#isPresent()" before accessing the value.(—ÑÚÀşÿÿÿÿ
+S
+java:S3655ğ"7Call "Optional#isPresent()" before accessing the value.(—ÑÚÀşÿÿÿÿ
+N
+java:S3655ÿ"7Call "Optional#isPresent()" before accessing the value.(ÁÜáî
+S
+java:S3655ô"7Call "Optional#isPresent()" before accessing the value.(—ÑÚÀşÿÿÿÿ
+u	java:S116D"`Rename this field "vue_detailsRepository" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùòšö
+q	java:S116U"\Rename this field "rsl_test_sys_repo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á…ÿ¹
+t
+java:S1845S"^Rename field "rslrepository" to prevent any misunderstanding/clash with field "rslRepository".(ã¡İª
+h	java:S100X"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùôê‹úÿÿÿÿ
+X
+java:S1854_"=Remove this useless assignment to local variable "startTime".(ÚÉ¬üÿÿÿÿ
+H
+java:S4925["-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+Q
+java:S6437]"6Revoke and change this password, as it is compromised.(ƒÉİşÿÿÿÿ
+I
+java:S1481_".Remove this unused "startTime" local variable.(ÚÉ¬üÿÿÿÿ
+V	java:S125m"<This block of commented-out lines of code should be removed.(ê½ç¦øÿÿÿÿ
+i	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ÔÑŞûÿÿÿÿ
+ˆ
+java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¸ÔÑŞûÿÿÿÿ
+V	java:S125v"<This block of commented-out lines of code should be removed.(§™Îøûÿÿÿÿ
+i
+java:S3776Œ"RRefactor this method to reduce its Cognitive Complexity from 46 to the 15 allowed.(øÊˆŠ
+R
+java:S1854˜"6Remove this useless assignment to local variable "d2".(«ÈÉùÿÿÿÿ
+M
+java:S1854—"6Remove this useless assignment to local variable "d1".(€Òàâ
+O
+java:S1854â"8Remove this useless assignment to local variable "date".(°© Ñ
+]
+java:S1854å"ARemove this useless assignment to local variable "alias_val_kpi".(´¡Â±şÿÿÿÿ
+W
+java:S1854ä";Remove this useless assignment to local variable "val_kpi".(¾é†åøÿÿÿÿ
+O
+java:S1854ã"8Remove this useless assignment to local variable "copr".(Ìò£Ş
+W
+java:S1854æ";Remove this useless assignment to local variable "name_db".(›Óıªøÿÿÿÿ
+N
+java:S1854ó"7Remove this useless assignment to local variable "rs0".(ªŸ–
+N
+java:S1854Ã"7Remove this useless assignment to local variable "rs0".(€õĞ®
+d
+java:S4488‹"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ø¥‰Àıÿÿÿÿ
+W	java:S125"<This block of commented-out lines of code should be removed.(˜µğ¥øÿÿÿÿ
+>
+java:S1481—"'Remove this unused "d1" local variable.(€Òàâ
+C
+java:S1481˜"'Remove this unused "d2" local variable.(«ÈÉùÿÿÿÿ
+W	java:S125¦"<This block of commented-out lines of code should be removed.(ö«úÒüÿÿÿÿ
+I
+java:S4925Ü"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+@
+java:S1481â")Remove this unused "date" local variable.(°© Ñ
+@
+java:S1481ã")Remove this unused "copr" local variable.(Ìò£Ş
+H
+java:S1481ä",Remove this unused "val_kpi" local variable.(¾é†åøÿÿÿÿ
+N
+java:S1481å"2Remove this unused "alias_val_kpi" local variable.(´¡Â±şÿÿÿÿ
+H
+java:S1481æ",Remove this unused "name_db" local variable.(›Óıªøÿÿÿÿ
+?
+java:S1481ó"(Remove this unused "rs0" local variable.(ªŸ–
+R	java:S125õ"<This block of commented-out lines of code should be removed.(“À©ô
+A	java:S106ˆ"+Replace this use of System.out by a logger.(ÆÀûı
+R	java:S125Œ"<This block of commented-out lines of code should be removed.(¶åòÚ
+F	java:S106"+Replace this use of System.out by a logger.(ÙÌ… üÿÿÿÿ
+R	java:S125¦"<This block of commented-out lines of code should be removed.(“À©ô
+R	java:S125·"<This block of commented-out lines of code should be removed.(†ïéş
+R	java:S125¼"<This block of commented-out lines of code should be removed.(¸œ¤­
+I
+java:S4925¾"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+R
+java:S6437¿"6Revoke and change this password, as it is compromised.(ğéè øÿÿÿÿ
+?
+java:S1481Ã"(Remove this unused "rs0" local variable.(€õĞ®
+Y
+java:S1854ä"=Remove this useless assignment to local variable "startTime".(ÚÉ¬üÿÿÿÿ
+I
+java:S4925à"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+M
+java:S6437â"6Revoke and change this password, as it is compromised.(¢¬Æà
+J
+java:S1481ä".Remove this unused "startTime" local variable.(ÚÉ¬üÿÿÿÿ
+W	java:S125ô"<This block of commented-out lines of code should be removed.(Î¸Š¬ùÿÿÿÿ
+Q	java:S125ö"<This block of commented-out lines of code should be removed.(øÕ2
+Y
+java:S1854«"=Remove this useless assignment to local variable "startTime".(ÚÉ¬üÿÿÿÿ
+I
+java:S4925§"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+M
+java:S6437©"6Revoke and change this password, as it is compromised.(¢¬Æà
+J
+java:S1481«".Remove this unused "startTime" local variable.(ÚÉ¬üÿÿÿÿ
+M
+java:S6437ñ"6Revoke and change this password, as it is compromised.(„¢¶Š
+h
+java:S3776š"RRefactor this method to reduce its Cognitive Complexity from 46 to the 15 allowed.(©ëò$
+R
+java:S1854¦"6Remove this useless assignment to local variable "d2".(«ÈÉùÿÿÿÿ
+M
+java:S1854¥"6Remove this useless assignment to local variable "d1".(€Òàâ
+O
+java:S1854ï"8Remove this useless assignment to local variable "date".(°© Ñ
+]
+java:S1854ò"ARemove this useless assignment to local variable "alias_val_kpi".(´¡Â±şÿÿÿÿ
+W
+java:S1854ñ";Remove this useless assignment to local variable "val_kpi".(¾é†åøÿÿÿÿ
+O
+java:S1854ğ"8Remove this useless assignment to local variable "copr".(Ìò£Ş
+W
+java:S1854ó";Remove this useless assignment to local variable "name_db".(›Óıªøÿÿÿÿ
+N
+java:S1854€"7Remove this useless assignment to local variable "rs0".(ªŸ–
+N
+java:S1854Î"7Remove this useless assignment to local variable "rs0".(€õĞ®
+d
+java:S4488™"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(•¿üÿÿÿÿ
+W	java:S125"<This block of commented-out lines of code should be removed.(˜µğ¥øÿÿÿÿ
+>
+java:S1481¥"'Remove this unused "d1" local variable.(€Òàâ
+C
+java:S1481¦"'Remove this unused "d2" local variable.(«ÈÉùÿÿÿÿ
+W	java:S125´"<This block of commented-out lines of code should be removed.(ö«úÒüÿÿÿÿ
+I
+java:S4925é"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+@
+java:S1481ï")Remove this unused "date" local variable.(°© Ñ
+@
+java:S1481ğ")Remove this unused "copr" local variable.(Ìò£Ş
+H
+java:S1481ñ",Remove this unused "val_kpi" local variable.(¾é†åøÿÿÿÿ
+N
+java:S1481ò"2Remove this unused "alias_val_kpi" local variable.(´¡Â±şÿÿÿÿ
+H
+java:S1481ó",Remove this unused "name_db" local variable.(›Óıªøÿÿÿÿ
+?
+java:S1481€"(Remove this unused "rs0" local variable.(ªŸ–
+R	java:S125‚"<This block of commented-out lines of code should be removed.(“À©ô
+A	java:S106”"+Replace this use of System.out by a logger.(ÆÀûı
+R	java:S125˜"<This block of commented-out lines of code should be removed.(¶åòÚ
+F	java:S106ª"+Replace this use of System.out by a logger.(ÙÌ… üÿÿÿÿ
+R	java:S125²"<This block of commented-out lines of code should be removed.(“À©ô
+R	java:S125Â"<This block of commented-out lines of code should be removed.(†ïéş
+R	java:S125Ç"<This block of commented-out lines of code should be removed.(¸œ¤­
+I
+java:S4925É"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+R
+java:S6437Ê"6Revoke and change this password, as it is compromised.(ğéè øÿÿÿÿ
+?
+java:S1481Î"(Remove this unused "rs0" local variable.(€õĞ®
+i	java:S100İ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è‘Œ‡ıÿÿÿÿ
+n
+java:S3776İ"RRefactor this method to reduce its Cognitive Complexity from 76 to the 15 allowed.(è‘Œ‡ıÿÿÿÿ
+R
+java:S1854è"6Remove this useless assignment to local variable "d2".(«ÈÉùÿÿÿÿ
+M
+java:S1854ç"6Remove this useless assignment to local variable "d1".(€Òàâ
+N
+java:S1854ã"7Remove this useless assignment to local variable "url".(Ü¤Ğü
+N
+java:S1854ç"7Remove this useless assignment to local variable "con".(Ü´Ê
+Z
+java:S1854">Remove this useless assignment to local variable "startTime3".(§’ÚŸúÿÿÿÿ
+U
+java:S1854">Remove this useless assignment to local variable "startTime2".(ñ°¹Ø
+Y
+java:S1854„"=Remove this useless assignment to local variable "startTime".(ÚÉ¬üÿÿÿÿ
+Q
+java:S1854Œ"5Remove this useless assignment to local variable "k".(—ÑÚÀşÿÿÿÿ
+_
+java:S4488Ü"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(æƒ¥¬
+W	java:S125à"<This block of commented-out lines of code should be removed.(˜µğ¥øÿÿÿÿ
+>
+java:S1481ç"'Remove this unused "d1" local variable.(€Òàâ
+C
+java:S1481è"'Remove this unused "d2" local variable.(«ÈÉùÿÿÿÿ
+I
+java:S4925ø"-Remove this "Class.forName()", it is useless.(ìè©‡úÿÿÿÿ
+F	java:S106"+Replace this use of System.out by a logger.(“şÚÂüÿÿÿÿ
+W	java:S125"<This block of commented-out lines of code should be removed.(ğÉŒÏıÿÿÿÿ
+A	java:S106“"+Replace this use of System.out by a logger.(¨»ËÅ
+A	java:S106˜"+Replace this use of System.out by a logger.(ˆò¡—
+I
+java:S4925«"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+F	java:S106Á"+Replace this use of System.out by a logger.(©Ûİ£ûÿÿÿÿ
+W	java:S125À"<This block of commented-out lines of code should be removed.(ğÉŒÏıÿÿÿÿ
+R	java:S125Ë"<This block of commented-out lines of code should be removed.(€ğ¨
+A	java:S106Ü"+Replace this use of System.out by a logger.(ÆÀûı
+?
+java:S1481ã"(Remove this unused "url" local variable.(Ü¤Ğü
+F	java:S106æ"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ
+?
+java:S1481ç"(Remove this unused "con" local variable.(Ü´Ê
+F	java:S106í"+Replace this use of System.out by a logger.(œÒ×‰ûÿÿÿÿ
+F	java:S106ñ"+Replace this use of System.out by a logger.(ÙÌ… üÿÿÿÿ
+R	java:S125ø"<This block of commented-out lines of code should be removed.(“À©ô
+R	java:S125‰"<This block of commented-out lines of code should be removed.(†ïéş
+B
+java:S1481Œ"&Remove this unused "k" local variable.(—ÑÚÀşÿÿÿÿ
+R	java:S125"<This block of commented-out lines of code should be removed.(¸œ¤­
+I
+java:S4925"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+R
+java:S6437‘"6Revoke and change this password, as it is compromised.(ğéè øÿÿÿÿ
+W	java:S125Ñ"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ
+W	java:S125Ü"<This block of commented-out lines of code should be removed.(ˆàâèúÿÿÿÿ
+Q	java:S125é"<This block of commented-out lines of code should be removed.(’
+W	java:S125"<This block of commented-out lines of code should be removed.(ËÌĞÃşÿÿÿÿ
+J
+java:S1481„".Remove this unused "startTime" local variable.(ÚÉ¬üÿÿÿÿ
+W	java:S125†"<This block of commented-out lines of code should be removed.(„ïÅÿÿÿÿÿ
+Q	java:S125ˆ"<This block of commented-out lines of code should be removed.(“©1
+R	java:S125Š"<This block of commented-out lines of code should be removed.(ƒ»…¢
+W	java:S125Œ"<This block of commented-out lines of code should be removed.(†Ö©Ôúÿÿÿÿ
+F
+java:S1481"/Remove this unused "startTime2" local variable.(ñ°¹Ø
+W	java:S125"<This block of commented-out lines of code should be removed.(‰Ô´¹øÿÿÿÿ
+K
+java:S1481"/Remove this unused "startTime3" local variable.(§’ÚŸúÿÿÿÿ
+Q	java:S125’"<This block of commented-out lines of code should be removed.(Ñ© 
+F	java:S106–"+Replace this use of System.out by a logger.(ä½ê™ıÿÿÿÿ
+W	java:S125˜"<This block of commented-out lines of code should be removed.(ğñ–Êüÿÿÿÿ
+W	java:S125Ú"<This block of commented-out lines of code should be removed.(Ù’ÿÿÿÿÿ
+W	java:S125„	"<This block of commented-out lines of code should be removed.(æ˜‰Şıÿÿÿÿ
+R	java:S125‡	"<This block of commented-out lines of code should be removed.(Ü®ó¸
+d	java:S100Û"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹çÁö
+i
+java:S3776Û"RRefactor this method to reduce its Cognitive Complexity from 76 to the 15 allowed.(¹çÁö
+R
+java:S1854ë"6Remove this useless assignment to local variable "d2".(«ÈÉùÿÿÿÿ
+M
+java:S1854ê"6Remove this useless assignment to local variable "d1".(€Òàâ
+S
+java:S1854Ò"7Remove this useless assignment to local variable "url".(ÎÖ¤úÿÿÿÿ
+S
+java:S1854Õ"7Remove this useless assignment to local variable "con".(õ–Úışÿÿÿÿ
+Y
+java:S1854ş"=Remove this useless assignment to local variable "startTime".(ÚÉ¬üÿÿÿÿ
+_
+java:S4488Ú"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Úï××
+W	java:S125’	"<This block of commented-out lines of code should be removed.(şÃïÍıÿÿÿÿ
+W	java:S125Ø"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+W	java:S125à"<This block of commented-out lines of code should be removed.(˜µğ¥øÿÿÿÿ
+>
+java:S1481ê"'Remove this unused "d1" local variable.(€Òàâ
+C
+java:S1481ë"'Remove this unused "d2" local variable.(«ÈÉùÿÿÿÿ
+I
+java:S4925ü"-Remove this "Class.forName()", it is useless.(ìè©‡úÿÿÿÿ
+A	java:S106‘"+Replace this use of System.out by a logger.(ìşµğ
+W	java:S125"<This block of commented-out lines of code should be removed.(´ã³úÿÿÿÿ
+I
+java:S4925§"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+A	java:S106º"+Replace this use of System.out by a logger.(ìşµğ
+W	java:S125Æ"<This block of commented-out lines of code should be removed.(ÂŸşÿÿÿÿÿ
+A	java:S106Ì"+Replace this use of System.out by a logger.(ÒåÉç
+D
+java:S1481Ò"(Remove this unused "url" local variable.(ÎÖ¤úÿÿÿÿ
+F	java:S106Ô"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ
+D
+java:S1481Õ"(Remove this unused "con" local variable.(õ–Úışÿÿÿÿ
+F	java:S106Ú"+Replace this use of System.out by a logger.(œÒ×‰ûÿÿÿÿ
+F	java:S106Ş"+Replace this use of System.out by a logger.(ÙÌ… üÿÿÿÿ
+R	java:S125å"<This block of commented-out lines of code should be removed.(“À©ô
+R	java:S125ñ"<This block of commented-out lines of code should be removed.(†ïéş
+I
+java:S4925ö"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+M
+java:S6437ø"6Revoke and change this password, as it is compromised.(¢¬Æà
+J
+java:S1481ş".Remove this unused "startTime" local variable.(ÚÉ¬üÿÿÿÿ
+W	java:S125‰"<This block of commented-out lines of code should be removed.(›ö¸’ûÿÿÿÿ
+F	java:S106Œ"+Replace this use of System.out by a logger.(ä½ê™ıÿÿÿÿ
+W	java:S125"<This block of commented-out lines of code should be removed.(ğñ–Êüÿÿÿÿ
+W	java:S125Ğ"<This block of commented-out lines of code should be removed.(æ˜‰Şıÿÿÿÿ
+F	java:S106Õ"+Replace this use of System.out by a logger.(œ«¬üÿÿÿÿ
+W	java:S125ß"<This block of commented-out lines of code should be removed.(ì£ûôøÿÿÿÿ
+I
+java:S1135Ÿ"2Complete the task associated to this TODO comment.(ÉÚõÎ
+I
+java:S4925·"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+R
+java:S6437º"6Revoke and change this password, as it is compromised.(ğéè øÿÿÿÿ
+R	java:S125»"<This block of commented-out lines of code should be removed.(ÎæÔñ
+G
+java:S1481½"0Remove this unused "whereClause" local variable.(™µ¡
+V
+java:S2479à":Remove the non-escaped \u0009 character from this literal.(Û·­şÿÿÿÿ
+V
+java:S2479ø":Remove the non-escaped \u0009 character from this literal.(Û·­şÿÿÿÿ
+V
+java:S2479¡":Remove the non-escaped \u0009 character from this literal.(Û·­şÿÿÿÿ
+i	java:S100ß"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶Ñ»Îüÿÿÿÿ
+I
+java:S4925ô"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+R
+java:S6437õ"6Revoke and change this password, as it is compromised.(ğéè øÿÿÿÿ
+I
+java:S4925Â"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+M
+java:S6437Ä"6Revoke and change this password, as it is compromised.(¢¬Æà
+V
+java:S2479Ê":Remove the non-escaped \u0009 character from this literal.(ü‡—Úûÿÿÿÿ
+W	java:S125Ğ"<This block of commented-out lines of code should be removed.(Î¸Š¬ùÿÿÿÿ
+Q	java:S125Ò"<This block of commented-out lines of code should be removed.(øÕ2
+i	java:S100ü"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄìÜÌøÿÿÿÿ
+R
+java:S1854„"6Remove this useless assignment to local variable "d2".(«ÈÉùÿÿÿÿ
+M
+java:S1854ƒ"6Remove this useless assignment to local variable "d1".(€Òàâ
+Y
+java:S1854 "=Remove this useless assignment to local variable "startTime".(ÚÉ¬üÿÿÿÿ
+_
+java:S4488û"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ô˜¦õ
+W	java:S125€"<This block of commented-out lines of code should be removed.(˜µğ¥øÿÿÿÿ
+>
+java:S1481ƒ"'Remove this unused "d1" local variable.(€Òàâ
+C
+java:S1481„"'Remove this unused "d2" local variable.(«ÈÉùÿÿÿÿ
+R	java:S125ˆ"<This block of commented-out lines of code should be removed.(“À©ô
+I
+java:S4925˜"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+M
+java:S6437š"6Revoke and change this password, as it is compromised.(¢¬Æà
+W	java:S125"<This block of commented-out lines of code should be removed.(µŒÖ¾ıÿÿÿÿ
+J
+java:S1481 ".Remove this unused "startTime" local variable.(ÚÉ¬üÿÿÿÿ
+W	java:S125¢"<This block of commented-out lines of code should be removed.(ÇªŸ®úÿÿÿÿ
+W	java:S125©"<This block of commented-out lines of code should be removed.(å®Ÿšùÿÿÿÿ
+Q
+java:S2479°":Remove the non-escaped \u0009 character from this literal.( ï
+P
+java:S2479±":Remove the non-escaped \u0009 character from this literal.(òçå
+V
+java:S2479³":Remove the non-escaped \u0009 character from this literal.(şú“ıÿÿÿÿ
+P
+java:S2479´":Remove the non-escaped \u0009 character from this literal.(…ÍÈh
+Q
+java:S2479µ":Remove the non-escaped \u0009 character from this literal.(®‡Ş¿
+Q
+java:S2479¶":Remove the non-escaped \u0009 character from this literal.(ƒœó
+V
+java:S2479¸":Remove the non-escaped \u0009 character from this literal.(ğ½¬Ìûÿÿÿÿ
+Q
+java:S2479¹":Remove the non-escaped \u0009 character from this literal.(¬…íÖ
+V
+java:S2479¼":Remove the non-escaped \u0009 character from this literal.(Œ„çÿÿÿÿÿ
+V
+java:S2479½":Remove the non-escaped \u0009 character from this literal.(÷ÏÇªùÿÿÿÿ
+W	java:S125À"<This block of commented-out lines of code should be removed.(Î¸Š¬ùÿÿÿÿ
+W	java:S125Ã"<This block of commented-out lines of code should be removed.(ğñ–Êüÿÿÿÿ
+W	java:S125„"<This block of commented-out lines of code should be removed.(æ˜‰Şıÿÿÿÿ
+i	java:S100’"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°Ùøêüÿÿÿÿ
+_
+java:S4488‘"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(–âéÃ
+I
+java:S4925¥"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+R
+java:S6437¨"6Revoke and change this password, as it is compromised.(ğéè øÿÿÿÿ
+V
+java:S2479º":Remove the non-escaped \u0009 character from this literal.(Û·­şÿÿÿÿ
+I
+java:S4925Û"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
+M
+java:S6437İ"6Revoke and change this password, as it is compromised.(¢¬Æà
+Q
+java:S2479ã":Remove the non-escaped \u0009 character from this literal.(ëŞƒı
+L
+java:S2209º"5Change this instance-reference to a static reference.(ÆšÿÖ
+@	java:S106Ò"+Replace this use of System.out by a logger.(ï±¥q
+K
+java:S1128"0Remove this unused import 'java.time.DayOfWeek'.(Óò»¸şÿÿÿÿ
+O
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ
+E
+java:S1128"/Remove this unused import 'java.util.Calendar'.(ÿÛö´
+\
+java:S1128!"FRemove this unused import 'java.util.concurrent.CopyOnWriteArrayList'.(ı¦ü
+\
+java:S1128""ARemove this unused import 'java.util.concurrent.ExecutorService'.(æ÷–£ùÿÿÿÿ
+V
+java:S1128#";Remove this unused import 'java.util.concurrent.Executors'.(äåÒÛÿÿÿÿÿ
+P
+java:S1128$":Remove this unused import 'java.util.concurrent.TimeUnit'.(Æ™ş
+c
+java:S1128'"HRemove this unused import 'org.quartz.CronScheduleBuilder.cronSchedule'.(Äê²øıÿÿÿÿ
+_
+java:S1128("DRemove this unused import 'org.quartz.DateBuilder.IntervalUnit.DAY'.(ÏÊóıÿÿÿÿ
+ã
+java:S6541İ"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 159 to 64, Complexity from 19 to 14, Nesting Level from 8 to 2, Number of Variables from 52 to 6.(è‘Œ‡ıÿÿÿÿ
+Ş
+java:S6541Û"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 143 to 64, Complexity from 22 to 14, Nesting Level from 8 to 2, Number of Variables from 58 to 6.(¹çÁö

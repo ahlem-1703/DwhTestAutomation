@@ -6,6 +6,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="stag" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 
 <!DOCTYPE html>
@@ -486,7 +487,7 @@
         });
 
 
-    //
+        //
     });
 
     // Enable submit button when form is valid
@@ -689,6 +690,69 @@
                 var modalInstance = new bootstrap.Modal(modal);
                 modalInstance.hide();
             })
+    }
+
+
+    const form = document.getElementById('formSchedule');
+    const nameInput = document.getElementById('scheduleName');
+    const triggerType = document.getElementById('triggerType');
+    const btnPlan = document.getElementById('btnPlan');
+    const endAtMonthly = document.getElementById('endAtMonthly');
+    const endAtDaily = document.getElementById('endAtDaily');
+    const endAtWeekly = document.getElementById('endAtWeekly');
+    const dailyExecutionTime = document.getElementById('dailyExecutionTime');
+    const weeklyExecutionTime = document.getElementById('weeklyExecutionTime');
+    const monthlyDateOfMonth = document.getElementById('monthlyDateOfMonth');
+    // Add event listeners to detect changes
+    nameInput.addEventListener('input', handleChange);
+    triggerType.addEventListener('change', handleChange);
+    endAtMonthly.addEventListener('input', handleChange);
+    endAtDaily.addEventListener('input', handleChange);
+    endAtWeekly.addEventListener('input', handleChange);
+    dailyExecutionTime.addEventListener('input', handleChange);
+    weeklyExecutionTime.addEventListener('input', handleChange);
+    monthlyDateOfMonth.addEventListener('input', handleChange);
+
+    function handleChange() {
+        if (nameInput.value != null && triggerType.value != null) {
+            console.log(nameInput.value)
+            getScheduleName(nameInput.value);
+            if (triggerType.value === "DAILY"
+                && endAtDaily.value !== ""
+                && dailyExecutionTime.value !== "") {
+
+                document.getElementById('btnPlan').disabled = false;
+            } else if (triggerType.value === "WEEKLY"
+                && endAtWeekly.value !== ""
+                && weeklyExecutionTime.value !== "") {
+
+                document.getElementById('btnPlan').disabled = false;
+            } else if (triggerType.value === "MONTHLY"
+                && endAtMonthly.value !== ""
+                && monthlyDateOfMonth.value !== "") {
+
+                document.getElementById('btnPlan').disabled = false;
+            }
+        }
+    }
+
+    function getScheduleName(scheduleName) {
+        var url = '/get_schedule_name?scheduleName=' + scheduleName;
+        fetch(url)
+            .then(function (response) {
+                return response.json();
+
+            }).then(function (data) {
+            if (data.status) {
+                document.getElementById('result').hidden = false;
+                document.getElementById('btnPlan').disabled = true;
+
+            }else {
+                document.getElementById('result').hidden = true;
+
+            }
+        })
+
     }
 </script>
 </body>

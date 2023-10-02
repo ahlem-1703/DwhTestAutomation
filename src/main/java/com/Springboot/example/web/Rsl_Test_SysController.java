@@ -12,6 +12,7 @@ import org.quartz.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.stereotype.Controller;
@@ -44,7 +45,12 @@ import static org.quartz.DateBuilder.IntervalUnit.DAY;
 @Aspect
 // @RestController  // Ajoutant l'annotation restcontroller pour cree les API Rest en les consommant apartir du front 
 public class Rsl_Test_SysController {
-
+    @Value("${spring.datasource.url}")
+    private String SPRING_URL;
+    @Value("${spring.datasource.username}")
+    private String SPRING_USERNAME;
+    @Value("${spring.datasource.password}")
+    private String SPRING_PASSWORD;
     @Autowired
     TaskSchedulerRepository taskSchedulerRepository;
     @Autowired
@@ -89,8 +95,8 @@ public class Rsl_Test_SysController {
         List<Kpi> KpiList = new ArrayList<Kpi>();
         Connection conn = null;
         Class.forName("org.postgresql.Driver");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4"
-                , "postgres", "root");
+        conn = DriverManager.getConnection(SPRING_URL
+                , SPRING_USERNAME, SPRING_PASSWORD);
 
         long startTime = System.currentTimeMillis();
         PreparedStatement stm = conn.prepareStatement("select * from kpi");
@@ -316,7 +322,7 @@ public class Rsl_Test_SysController {
 //			System.out.println("voilaaa");
             Connection conn = null;
             Class.forName("org.postgresql.Driver");
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root");
+            conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD);
 
 
             PreparedStatement ps0 = conn.prepareStatement("delete from rsl_test_sys where id_kpi= " + k.getId_kpi() + " and date between'" + dateDeb + "' and '" + dateFin + "'");
@@ -333,8 +339,8 @@ public class Rsl_Test_SysController {
 // -----------------------------------------------------------------------------------------------------------------------------
 
     @GetMapping("/HistoriqueVueGlobale")
-    public String getGV(@RequestParam(name = "kpi",defaultValue = "") String[] kpis,
-                        @RequestParam(name="date",defaultValue = "") String date,
+    public String getGV(@RequestParam(name = "kpi", defaultValue = "") String[] kpis,
+                        @RequestParam(name = "date", defaultValue = "") String date,
                         Model model) throws Exception {
 
         List<Vue_Globale> rslt00 = new ArrayList<Vue_Globale>();
@@ -342,16 +348,16 @@ public class Rsl_Test_SysController {
         String sql = "";
         if (kpis.length != 0 && !date.isEmpty()) {
             String kpisStr = String.join(",", kpis);
-            sql = "SELECT * from vue_globale where code_requete in ("+kpisStr+") and "
-                    +"TO_TIMESTAMP(date_deb, 'YYYY-MM-DD') <= TO_TIMESTAMP('"+date+"','YYYY-MM-DD')"
-                    +" AND TO_TIMESTAMP(date_fin, 'YYYY-MM-DD') >=TO_TIMESTAMP('"+date+"','YYYY-MM-DD') order by id desc";
+            sql = "SELECT * from vue_globale where code_requete in (" + kpisStr + ") and "
+                    + "TO_TIMESTAMP(date_deb, 'YYYY-MM-DD') <= TO_TIMESTAMP('" + date + "','YYYY-MM-DD')"
+                    + " AND TO_TIMESTAMP(date_fin, 'YYYY-MM-DD') >=TO_TIMESTAMP('" + date + "','YYYY-MM-DD') order by id desc";
         } else {
             sql = "SELECT * FROM vue_globale WHERE 1=0"; // empty result set
         }
         Connection conn = null;
         Class.forName("org.postgresql.Driver");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4"
-                , "postgres", "root");
+        conn = DriverManager.getConnection(SPRING_URL
+                , SPRING_USERNAME, SPRING_PASSWORD);
 
         long startTime = System.currentTimeMillis();
         PreparedStatement stm = conn.prepareStatement("select * from kpi");
@@ -414,15 +420,15 @@ public class Rsl_Test_SysController {
         if (kpis.length != 0 && !dateDeb.isEmpty() && !dateFin.isEmpty()) {
             String kpisStr = String.join(",", kpis);
             sql = "SELECT code_requete, date, gap, name_kpi, val_kpi1, val_kpi2, gap_par_100, nbre_record_not_ok, nbre_record_ok, val_dim, database1, database2 " +
-                    "FROM public.vue_detaille where code_requete in ("+kpisStr+") and TO_TIMESTAMP(date, 'YYYY-MM-DD') between TO_TIMESTAMP('"+dateDeb+"', 'YYYY-MM-DD') " +
-                    "and TO_TIMESTAMP('"+dateFin+"', 'YYYY-MM-DD')";
+                    "FROM public.vue_detaille where code_requete in (" + kpisStr + ") and TO_TIMESTAMP(date, 'YYYY-MM-DD') between TO_TIMESTAMP('" + dateDeb + "', 'YYYY-MM-DD') " +
+                    "and TO_TIMESTAMP('" + dateFin + "', 'YYYY-MM-DD')";
         } else {
             sql = "SELECT * FROM vue_detaille WHERE 1=0"; // empty result set
         }
         Connection conn = null;
         Class.forName("org.postgresql.Driver");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4"
-                , "postgres", "root");
+        conn = DriverManager.getConnection(SPRING_URL
+                , SPRING_USERNAME, SPRING_PASSWORD);
 
         long startTime = System.currentTimeMillis();
 
@@ -457,17 +463,18 @@ public class Rsl_Test_SysController {
         return "Historique/VueDetaille";
 
     }
+
     @GetMapping("/HistoriqueVueDetailleDataTable")
     @ResponseBody
     public Map<String, Object> historiqueVueDetailleDataTable(@RequestParam(name = "kpi", defaultValue = "") String[] kpis,
-                                                             @RequestParam(name = "dateDeb", defaultValue = "") String dateDeb,
-                                                             @RequestParam(name = "dateFin", defaultValue = "") String dateFin,
-                                                             @RequestParam("draw") int draw,
-                                                             @RequestParam("page") int page,
-                                                             @RequestParam("size") int size,
-                                                             @RequestParam("search[value]") String searchValue,
-                                                             @RequestParam("order[0][column]") int sortColumnIndex,
-                                                             @RequestParam("order[0][dir]") String sortDirection) throws Exception {
+                                                              @RequestParam(name = "dateDeb", defaultValue = "") String dateDeb,
+                                                              @RequestParam(name = "dateFin", defaultValue = "") String dateFin,
+                                                              @RequestParam("draw") int draw,
+                                                              @RequestParam("page") int page,
+                                                              @RequestParam("size") int size,
+                                                              @RequestParam("search[value]") String searchValue,
+                                                              @RequestParam("order[0][column]") int sortColumnIndex,
+                                                              @RequestParam("order[0][dir]") String sortDirection) throws Exception {
         List<Vue_Detaillé> vueDetailles = new ArrayList<>();
         Map<String, Object> res = new HashMap<>();
         int totalRecords = 0;
@@ -494,7 +501,7 @@ public class Rsl_Test_SysController {
             countStatement = "SELECT count(*) FROM vue_detaille WHERE 1 = 0"; // empty result set
         }
 
-        try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root");
+        try (Connection conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD);
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, page * size);
             ps.setInt(2, size);
@@ -517,7 +524,7 @@ public class Rsl_Test_SysController {
                     vueDetailles.add(blog);
                 }
             }
-            try(PreparedStatement cs = conn.prepareStatement(countStatement)){
+            try (PreparedStatement cs = conn.prepareStatement(countStatement)) {
                 ResultSet rcs = cs.executeQuery();
                 rcs.next();
                 totalRecords = rcs.getInt(1);
@@ -711,7 +718,7 @@ public class Rsl_Test_SysController {
 //				System.out.println("voilaaa");
             Connection conn = null;
             Class.forName("org.postgresql.Driver");
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root");
+            conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD);
 
 
             PreparedStatement ps0 = conn.prepareStatement("delete from vue_detaille where code_requete= " + k.getId_kpi() + " and date between'" + dateDeb + "' and '" + dateFin + "'");
@@ -910,7 +917,7 @@ public class Rsl_Test_SysController {
 //			System.out.println("voilaaa");
             Connection conn = null;
             Class.forName("org.postgresql.Driver");
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root");
+            conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD);
             // requete pour afficher idkpi valkpi1,valkpi2,date,NbreRecord 1 , Nbre Record 2
 //            PreparedStatement ps = conn.prepareStatement("select COALESCE(RR1.date,RR2.date) as Date,RR2.idkpi as Code_requete,RR2.val_kpi1 as val3 ,RR2.val_kpi2 as val4,RR2.valeur_dim1 as val1,RR2.valeur_dim2 as val2,RR2.gap as gap ,\n" +
 //                    "RR2.name_kpi as name ,COALESCE(RR1.load1,0) as load1 ,COALESCE(RR1.load2,0) as load2 ,coalesce(RR3.nbreRecordOK,0) as nbreRecordOK,coalesce(RR3.nbreRecordNOTOK,0) as nbreRecordNotOk from \n" +
@@ -1329,7 +1336,7 @@ public class Rsl_Test_SysController {
 //			Kpi k = kpirepository.findById(kpi).get();
 //			Connection conn = null;
 //			Class.forName("org.postgresql.Driver");
-//			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root");
+//			conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME,SPRING_PASSWORD);
 //			PreparedStatement ps = conn.prepareStatement(
 //					"select COALESCE(RR1.date,RR2.date) as Date,RR2.idkpi as Code_requete,RR2.val_kpi1 as val3,RR2.val_kpi2 as val4,RR2.valeur_dim1 as val1,RR2.valeur_dim2 as val2,RR2.gap as gap ,\n"
 //							+ "RR2.name_kpi as name ,COALESCE(RR1.load1,0) as load1 ,COALESCE(RR1.load2,0) as load2 ,coalesce(RR3.nbreRecordOK,0) as nbreRecordOK,coalesce(RR3.nbreRecordNOTOK,0) as nbreRecordNotOk from \n"
@@ -1652,8 +1659,8 @@ public class Rsl_Test_SysController {
             Kpi k = kpirepository.findById(kpi).get();
             Connection conn = null;
             Class.forName("org.postgresql.Driver");
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4"
-                    , "postgres", "root");
+            conn = DriverManager.getConnection(SPRING_URL
+                    , SPRING_USERNAME, SPRING_PASSWORD);
             PreparedStatement ps = conn.prepareStatement("select  k.name_kpi as name ,a.idkpi  Code_requete , a.date as Date , a.valeur_dim as dim , a.val_kpi as val3  , b.val_kpi  as val4 ,0 as nbreRecordOk ,0 as nbreRecordNotOk,abs(a.val_kpi - b.val_kpi) as gap from database1 a   \r\n"
                     + "Full outer join database2 b  on  a.id_kpi = b.id_kpi and a.valeur_dim = b.valeur_dim and a.date = b.date\r\n"
                     + "left outer join kpi k on a.id_kpi=" + k.id_kpi + " \r\n"
@@ -1773,8 +1780,8 @@ public class Rsl_Test_SysController {
 //	  
 //	  
 //	  Connection conn = null; Class.forName("org.postgresql.Driver"); conn =
-//	  DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4" ,
-//	  "postgres", "root"); //requete pour afficher idkpi
+//	  DriverManager.getConnection(SPRING_URL ,
+//	  SPRING_USERNAME,SPRING_PASSWORD); //requete pour afficher idkpi
 //	  valkpi1,valkpi2,date,NbreRecord 1 , Nbre Record 2 PreparedStatement ps =
 //	  conn.
 //	  prepareStatement("select COALESCE(RR1.date,RR2.date) as Date,RR2.idkpi as Code_requete,RR2.val_kpi1 as val3,RR2.val_kpi2 as val4,RR2.valeur_dim1 as val1,RR2.valeur_dim2 as val2,RR2.gap as gap ,\n"
@@ -1958,15 +1965,15 @@ public class Rsl_Test_SysController {
     @GetMapping("/VueDetailleDataTable")
     @ResponseBody
     public Map<String, Object> getAllRsltDetaille(
-                                     @RequestParam("kpiii") String[] kpis,
-                                     @RequestParam("DateDeb") String dateDeb,
-                                     @RequestParam("DateFin") String dateFin,
-                                     @RequestParam("draw") int draw,
-                                     @RequestParam("page") int page,
-                                     @RequestParam("size") int size,
-                                     @RequestParam("search[value]") String searchValue,
-                                     @RequestParam("order[0][column]") int sortColumnIndex,
-                                     @RequestParam("order[0][dir]") String sortDirection) throws Exception {
+            @RequestParam("kpiii") String[] kpis,
+            @RequestParam("DateDeb") String dateDeb,
+            @RequestParam("DateFin") String dateFin,
+            @RequestParam("draw") int draw,
+            @RequestParam("page") int page,
+            @RequestParam("size") int size,
+            @RequestParam("search[value]") String searchValue,
+            @RequestParam("order[0][column]") int sortColumnIndex,
+            @RequestParam("order[0][dir]") String sortDirection) throws Exception {
 
         List<Vue_Detaillé> rslt2 = new ArrayList<>();
         List<Vue_Detaillé> rsltForCsv = new ArrayList<>();
@@ -1975,8 +1982,8 @@ public class Rsl_Test_SysController {
         Class.forName("org.postgresql.Driver");
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root");
-  //          Database d1 = dbrepository.findDatabaseById(db1);
+            conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD);
+            //          Database d1 = dbrepository.findDatabaseById(db1);
 //			Database d2 = dbrepository.findDatabaseById(db2);
             String whereClause = "";
             whereClause = " WHERE name_kpi ILIKE '%" + searchValue + "%'"
@@ -2084,7 +2091,7 @@ public class Rsl_Test_SysController {
                             + "        and abs (coalesce (a.val_kpi,0) + coalesce (b.val_kpi,0))>0        \r\n"
                             + "        and coalesce (a.date, b.date) between '" + dateDeb + "' and '" + dateFin + "'  \r\n"
                             + "    AND CASE WHEN (ABS(coalesce(a.val_kpi, 0) - coalesce(b.val_kpi, 0))) > K.seuil THEN 1 ELSE 0 END = 1\r\n"
-                            + "        GROUP BY  coalesce ( a.id_kpi, b.id_kpi ),  K.name_kpi ,a.system,b.system,coalesce (a.date, b.date),coalesce (a.valeur_dim,b.valeur_dim) ,  K.seuil\r\n"+
+                            + "        GROUP BY  coalesce ( a.id_kpi, b.id_kpi ),  K.name_kpi ,a.system,b.system,coalesce (a.date, b.date),coalesce (a.valeur_dim,b.valeur_dim) ,  K.seuil\r\n" +
                             ") AS subquery");
             ps.setInt(1, page * size);
             ps.setInt(2, size);
@@ -2123,8 +2130,8 @@ public class Rsl_Test_SysController {
         } catch (SQLException e) {
             // Handle any exceptions that occur during the database operation
             e.printStackTrace();
-            Map<String,Object> messageError = new HashMap<>();
-            messageError.put("message",e);
+            Map<String, Object> messageError = new HashMap<>();
+            messageError.put("message", e);
             return messageError;
         } finally {
             // Close the connection in the finally block to ensure it always gets closed
@@ -2162,7 +2169,7 @@ public class Rsl_Test_SysController {
 
         Connection conn = null;
         Class.forName("org.postgresql.Driver");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root");
+        conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD);
 
         // Build the WHERE clause of the SQL query based on the search value
         String whereClause = "";
@@ -2240,8 +2247,8 @@ public class Rsl_Test_SysController {
 
         Connection conn = null;
         Class.forName("org.postgresql.Driver");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4"
-                , "postgres", "root");
+        conn = DriverManager.getConnection(SPRING_URL
+                , SPRING_USERNAME, SPRING_PASSWORD);
 
         long startTime = System.currentTimeMillis();
 
@@ -2326,8 +2333,8 @@ public class Rsl_Test_SysController {
 
         Connection conn = null;
         Class.forName("org.postgresql.Driver");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4"
-                , "postgres", "root");
+        conn = DriverManager.getConnection(SPRING_URL
+                , SPRING_USERNAME, SPRING_PASSWORD);
 //            PreparedStatement ps = conn.prepareStatement("select  k.name_kpi as name ,a.idkpi  Code_requete , a.date as Date , a.valeur_dim as dim , a.val_kpi as val3  , b.val_kpi  as val4 ,0 as nbreRecordOk ,0 as nbreRecordNotOk,abs(a.val_kpi - b.val_kpi) as gap from database1 a   \r\n"
 //					+"Full outer join database2 b  on  a.id_kpi = b.id_kpi and a.valeur_dim = b.valeur_dim and a.date = b.date\r\n"
 //					+"left outer join kpi k on a.id_kpi="+k.id_kpi+" \r\n"
@@ -2456,20 +2463,21 @@ public class Rsl_Test_SysController {
             model.addAttribute("message", "date Deb supérieur à date Fin");
             return "resultat10";
         }
-        model.addAttribute("rslt", loadDataHelper.loadAllData(kpis,dateDeb,dateFin,db1,db2).get("vueGlobale").get(0));
+        model.addAttribute("rslt", loadDataHelper.loadAllData(kpis, dateDeb, dateFin, db1, db2).get("vueGlobale").get(0));
         return "resultat3";
     }
+
     @PostMapping("sendResultMail")
     @ResponseBody
     public String sendResultMail(@RequestParam("kpiii") String[] kpis,
                                  @RequestParam("email") String[] emails,
                                  @RequestParam("DateDeb") String dateDeb,
-                                 @RequestParam("DateFin") String dateFin) throws Exception{
+                                 @RequestParam("DateFin") String dateFin) throws Exception {
         List<Vue_Detaillé> rsltForCsv = new ArrayList<>();
         Class.forName("org.postgresql.Driver");
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4", "postgres", "root");
+            conn = DriverManager.getConnection(SPRING_URL, SPRING_USERNAME, SPRING_PASSWORD);
             String[] columnNames = {"date", "code_requete", "val_kpi1", "val_kpi2", "name_kpi", "val_dim", "gap", "GAP_par_100", "nbreRecordNotOk"};
             String kpiList = Arrays.stream(kpis).map(k -> "'" + k + "'").collect(Collectors.joining(","));
             PreparedStatement psForCsv = conn
@@ -2495,7 +2503,7 @@ public class Rsl_Test_SysController {
                                     + "    AND CASE WHEN (ABS(coalesce(a.val_kpi, 0) - coalesce(b.val_kpi, 0))) > K.seuil THEN 1 ELSE 0 END = 1\r\n"
                                     + "        GROUP BY  coalesce ( a.id_kpi, b.id_kpi ),  K.name_kpi ,a.system,b.system,coalesce (a.date, b.date),coalesce (a.valeur_dim,b.valeur_dim) ,  K.seuil\r\n");
             ResultSet rsForCsv = psForCsv.executeQuery();
-            List<Vue_Globale> rsltGlobal = getResultFromVueGlobale(kpis,dateDeb,dateFin);
+            List<Vue_Globale> rsltGlobal = getResultFromVueGlobale(kpis, dateDeb, dateFin);
             while (rsForCsv.next()) {
                 Vue_Detaillé blog = new Vue_Detaillé();
                 blog.setDate(rsForCsv.getString("date"));
@@ -2509,9 +2517,8 @@ public class Rsl_Test_SysController {
                 blog.setNbreRecordNotOk(rsForCsv.getInt("nbre_record_not_ok"));
                 rsltForCsv.add(blog);
             }
-            vueDetailSevice.writeObjectsToCsv(rsltForCsv,columnNames,rsltGlobal,emails);
-        }
-        catch (Exception e){
+            vueDetailSevice.writeObjectsToCsv(rsltForCsv, columnNames, rsltGlobal, emails);
+        } catch (Exception e) {
             return "something went wrong " + e.getMessage();
         }
         return "E-mail has been sent successfully !";
@@ -2521,8 +2528,8 @@ public class Rsl_Test_SysController {
         List<Vue_Globale> rsltGlobal = new ArrayList<>();
         Connection conn = null;
         Class.forName("org.postgresql.Driver");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test4"
-                , "postgres", "root");
+        conn = DriverManager.getConnection(SPRING_URL
+                , SPRING_USERNAME, SPRING_PASSWORD);
 
         long startTime = System.currentTimeMillis();
         String kpiList = Arrays.stream(kpis).map(k -> "'" + k + "'").collect(Collectors.joining(","));
@@ -2611,28 +2618,28 @@ public class Rsl_Test_SysController {
             Trigger trigger;
             if ("DAILY".equals(triggerType)) {
                 // For Daily schedule
-                trigger = schedulerHelper.createDailyTrigger(scheduleName, dailyExecutionTime,dailyDaysOfWeek,endAtDaily);
+                trigger = schedulerHelper.createDailyTrigger(scheduleName, dailyExecutionTime, dailyDaysOfWeek, endAtDaily);
 
             } else if ("WEEKLY".equals(triggerType)) {
                 // For Weekly schedule
-                trigger = schedulerHelper.createWeeklyTrigger(scheduleName,weeklyExecutionTime, WeeklyDaysOfWeek,endAtWeekly);
+                trigger = schedulerHelper.createWeeklyTrigger(scheduleName, weeklyExecutionTime, WeeklyDaysOfWeek, endAtWeekly);
             } else if ("MONTHLY".equals(triggerType)) {
                 // For Monthly schedule
-                trigger = schedulerHelper.createMonthlyTrigger(scheduleName,MonthlyExecutionTime, MonthlyDateOfMonth,endAtMonthly);
+                trigger = schedulerHelper.createMonthlyTrigger(scheduleName, MonthlyExecutionTime, MonthlyDateOfMonth, endAtMonthly);
             } else {
                 throw new IllegalArgumentException("Invalid trigger type: " + triggerType);
             }
             TaskScheduler taskScheduler =
-                    new TaskScheduler(scheduleName,TriggerType.valueOf(triggerType),trigger.getEndTime());
+                    new TaskScheduler(scheduleName, TriggerType.valueOf(triggerType), trigger.getEndTime());
             taskScheduler = taskSchedulerRepository.save(taskScheduler);
             // Create a job detail
             JobDetail jobDetail = JobBuilder.newJob(ScheduleJob.class)
                     .withIdentity(scheduleName, "group1")
-                    .usingJobData("kpi",jsonArray)
-                    .usingJobData("dateDeb",dateDeb)
-                    .usingJobData("dateFin",dateFin)
-                    .usingJobData("database1",db1)
-                    .usingJobData("database2",db2)
+                    .usingJobData("kpi", jsonArray)
+                    .usingJobData("dateDeb", dateDeb)
+                    .usingJobData("dateFin", dateFin)
+                    .usingJobData("database1", db1)
+                    .usingJobData("database2", db2)
                     .usingJobData("idScheduler", taskScheduler.getId())
                     .usingJobData("scheduleName", scheduleName)
                     .build();
@@ -2652,20 +2659,32 @@ public class Rsl_Test_SysController {
 
         return objectMap;
     }
+
     @GetMapping("tasksList")
-    public String listTasks(Model model){
+    public String listTasks(Model model) {
         List<TaskScheduler> taskSchedulers = taskSchedulerRepository.findAll();
-        model.addAttribute("listTasks",taskSchedulers);
+        model.addAttribute("listTasks", taskSchedulers);
         return "TaskList";
     }
+
+    @GetMapping(value = "/get_schedule_name", produces = "application/json")
+    @ResponseBody
+    public Map<String, Object> getScheduleName(@RequestParam("scheduleName") String scheduleName, Model model) {
+        Boolean result = rsltService.getScheduleName(scheduleName);
+        model.addAttribute("message", result);
+        Map<String, Object> objectMap = new HashMap<>();
+
+        objectMap.put("status", result);
+
+        return objectMap;
+    }
+
     @GetMapping("getDetailedExecutions/{id}")
     @ResponseBody
-    public Set<TriggerInformation> getDetailedExecutions(@PathVariable("id") Long id){
+    public Set<TriggerInformation> getDetailedExecutions(@PathVariable("id") Long id) {
         Set<TriggerInformation> triggerInformations = taskSchedulerRepository.findById(id).get().getTriggerInformation();
         return triggerInformations;
     }
-
-
 
 
 }
